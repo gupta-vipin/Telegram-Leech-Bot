@@ -179,8 +179,8 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
             button.append([pyrogram.InlineKeyboardButton(text="☁️ Index Website URL ☁️", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await messa_ge.reply_text(f"🤖: {file_upload} has been Uploaded successfully to @AbirHasan2005's Cloud <a href='tg://user?id={g_id}'></a>\n📀 Size: {gjay} \n\nYou can get them on Index Website ☁️", reply_markup=button_markup)
-        #await message.edit_text(f"""🤖: {file_upload} has been Uploaded successfully to @AbirHasan2005's cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FileLink</a>\nℹ️ Direct URL:  <a href="{tam_link}">IndexLink</a>""")
+        await messa_ge.reply_text(f"🤖: {file_upload} has been Uploaded successfully to Cloud <a href='tg://user?id={g_id}'></a>\n📀 Size: {gjay} \n\nYou can get them on Index Website ☁️", reply_markup=button_markup)
+        #await message.edit_text(f"""🤖: {file_upload} has been Uploaded successfully to cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FileLink</a>\nℹ️ Direct URL:  <a href="{tam_link}">IndexLink</a>""")
         os.remove(file_upload)
         await del_it.delete()
     else:
@@ -222,7 +222,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
             button.append([pyrogram.InlineKeyboardButton(text="☁️ Index Website URL ☁️", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await messa_ge.reply_text(f"🤖: Folder has been Uploaded successfully to {tt} in @AbirHasan2005's Cloud <a href='tg://user?id={g_id}'></a>\n📀 Size: {gjay} \n\nYou can get them on Index Website ☁️", reply_markup=button_markup)
+        await messa_ge.reply_text(f"🤖: Folder has been Uploaded successfully to {tt} in Cloud <a href='tg://user?id={g_id}'></a>\n📀 Size: {gjay} \n\nYou can get them on Index Website ☁️", reply_markup=button_markup)
         #await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         #await messa_ge.reply_text(f"""🤖: Folder has been Uploaded successfully to {tt} in your cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FolderLink</a>\nℹ️ Index Url:. <a href="{tam_link}">IndexLink</a>""")
         shutil.rmtree(file_upload)
@@ -280,7 +280,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, e
                 message_for_progress_display = await message.reply_text(
                     "Starting upload of {}".format(os.path.basename(local_file_name))
                 )
-            if local_file_name.upper().endswith(("MKV", "MP4", "WEBM")):
+            if local_file_name.upper().endswith(("WEBM")):
                 metadata = extractMetadata(createParser(local_file_name))
                 duration = 0
                 if metadata.has("duration"):
